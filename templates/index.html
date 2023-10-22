@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ImageCaption</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ImageCaption</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container my-4">
+        <div class="row mx-0 justify-content-center">
+          <div class="col-md-7 col-lg-5 px-lg-2 col-xl-4 px-xl-0">
+            <form method="POST" class="w-100 rounded p-4 border bg-white" action="/upload" enctype="multipart/form-data">
+                <div class="mb-4">
+                  <div class="form-control h-auto">
+                    <input name="photo" type="file" class="form-control-file" accept="image/*" />
+                  </div>
+                </div>
+            
+                <div class="mb-3">
+                  <button type="submit" class="btn btn-primary px-3">Upload</button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-4" id="features">
+        <h1>Features</h1>
+      <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Image Feature Extraction</h5>
+              <p class="card-text">The code uses a pre-trained Xception model for feature extraction from the input image. Xception is a deep convolutional neural network (CNN) that captures visual features from the image.
+                Extracted features are then passed to the caption generation model.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tokenizer</h5>
+              <p class="card-text">The code uses a tokenizer to preprocess and tokenize text data. It maps words to unique integer values, allowing the model to work with numerical data.
+                The tokenizer is loaded from the 'tokenizer.p' file, which is used to convert between words and their corresponding integer representations.</p>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <div class="row my-4">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">LSTM Model</h5>
+              <p class="card-text">An LSTM (Long Short-Term Memory) model is used for caption generation. The model takes image features and textual input as its initial state and generates captions word by word.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Caption Generation</h5>
+              <p class="card-text">The generate_desc function takes the LSTM model, tokenizer, image features, and a maximum sequence length as input and generates captions.
+                It uses a "start" token as the initial input and iteratively predicts the next word until it generates an "end" token or reaches the maximum sequence length..</p>
+            </div>
+          </div>
+        </div>
+      </div>      
+      </div>      
+
+      <footer class="bg-primary text-center text-lg-start text-light">
+        <!-- Copyright -->
+        <div class="text-center p-3">
+          © 2023 Copyright:
+          <div >Developed By Zainab Dongarkar and Team</div>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
