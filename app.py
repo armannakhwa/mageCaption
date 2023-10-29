@@ -85,6 +85,9 @@ def upload_file():
         img = Image.open(filename)
 
         description = generate_desc(model, tokenizer, photo, max_length)
+        words = description.split()  # Split the string into words
+        if len(words) >= 3:  # Ensure there are at least 3 words (start, content, end)
+            description = ' '.join(words[1:-1])  # Join words from the 2nd to the 2nd-to-last       
 
         # Return the image caption as a response
         image_url = f"/uploads/{file.filename}"
